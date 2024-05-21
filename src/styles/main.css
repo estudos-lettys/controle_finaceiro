@@ -1,19 +1,50 @@
 .container_main {
-  
-   display: flex;
+    display: flex;
 }
- .filtro{
-        display: flex;
-        gap: 2rem;
-        flex-direction: column;
-        padding: 2rem 1.25rem;
-    }
+
+.filtro {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    padding: 2rem 1.25rem;
+}
+
+.resumo_financeiro {
+    color: var(--color-grey-1);
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-1);
+}
+
+.buttons_filter {
+    color: var(--color-grey-1);
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-3);
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 2px solid var(--color-brand-3);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.buttons_filter:hover {
+    border: 2px solid var(--color-brand-1);
+    color: var(--color-brand-1);
+    background-color: var(--color-brand-3);
+}
+
+.button_filtro {
+    display: flex;
+    gap: 1.25rem;
+    flex-direction: row;
+}
+
 @media(min-width: 900px) {
     .container_main {
         justify-content: center;
         align-items: center;
     }
-    .filtro{
+
+    .filtro {
         gap: 20rem;
         padding: 3rem;
         flex-direction: row;
@@ -21,5 +52,5 @@
         flex-wrap: wrap;
         justify-content: center;
     }
-   
+
 }
