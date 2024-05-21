@@ -1,0 +1,41 @@
+.container_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    background-color: var(--color-brand-3);
+}
+
+.button_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: transparent;
+    background-color: var(--color-grey-1);
+    color: var(--fixed-white);
+    border-radius: var(--radius-1);
+    padding: 1rem;
+    width: 100%;
+}
+
+.button_header:hover {
+    background-color: var(--color-grey-2);
+    color: var(--fixed-white);
+    cursor: pointer;
+}
+
+@media(min-width: 900px) {
+    .container_header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: var(--color-brand-3);
+        padding: 0;
+    }
+
+    .button_header {
+        display: flex;
+        align-items: center;
+        width: 20%;
+    }
+}

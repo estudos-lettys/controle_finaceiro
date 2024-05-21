@@ -1,0 +1,25 @@
+.container_main {
+  
+   display: flex;
+}
+ .filtro{
+        display: flex;
+        gap: 2rem;
+        flex-direction: column;
+        padding: 2rem 1.25rem;
+    }
+@media(min-width: 900px) {
+    .container_main {
+        justify-content: center;
+        align-items: center;
+    }
+    .filtro{
+        gap: 20rem;
+        padding: 3rem;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+   
+}
