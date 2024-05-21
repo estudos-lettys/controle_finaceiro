@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.filtro {
+.container_filtro {
     display: flex;
     gap: 2rem;
     flex-direction: column;
@@ -44,7 +44,7 @@
         align-items: center;
     }
 
-    .filtro {
+    .container_filtro {
         gap: 20rem;
         padding: 3rem;
         flex-direction: row;
