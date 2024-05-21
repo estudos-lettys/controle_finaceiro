@@ -1,0 +1,23 @@
+.container_valores {
+    display: flex;
+    padding: 3rem 0rem;
+    margin: 0rem 1.25rem;
+}
+
+.valorNaoEncontrado {
+    background-color: var(--color-brand-3);
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px dashed var(--color-brand-1);
+    color: var(--color-grey-1-opacity-5);
+}
+
+@media(min-width: 900px) {
+    .container_valores {
+        width: 100%;
+        justify-content: center;
+    }
+}
