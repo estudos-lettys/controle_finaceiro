@@ -2,7 +2,7 @@ const main = document.querySelector("main");
 const valores = document.querySelector("div.container_valores");
 
 
-function renderizaSemValoresTodos() {
+export function renderizaSemValoresTodos() {
     valores.innerHTML = "";
     valores.innerHTML = `
     <div class="valorNaoEncontrado">
@@ -11,7 +11,6 @@ function renderizaSemValoresTodos() {
    `;
 
 }
-renderizaSemValoresTodos();
 
 function renderizaSemValoresEntrada() {
     valores.innerHTML = "";
@@ -30,3 +29,4 @@ function renderizaSemValoresSaida() {
     </div>
    `;
 }
+

@@ -2,6 +2,8 @@
 @import url(./header.css);
 @import url(./main_filtro.css);
 @import url(./main_soma.css);
+@import url(./renderSemValores.css);
+@import url(./renderValores.css);
 
 * {
   margin: 0;
