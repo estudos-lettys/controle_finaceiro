@@ -1,5 +1,9 @@
 .container_main {
     display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .container_filtro {
@@ -45,12 +49,12 @@
     }
 
     .container_filtro {
-        gap: 20rem;
-        padding: 3rem;
+        width: 100%;
+        padding: 3rem 0rem;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
     }
 
 }
