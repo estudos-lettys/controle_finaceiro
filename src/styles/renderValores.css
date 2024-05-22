@@ -1,0 +1,53 @@
+.valorEncontrado {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-brand-3);
+    margin-bottom: var(--font-size-1);
+    padding: 0.85rem;
+    border-radius: 8px;
+}
+
+.category_button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.valor_value {
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-3);
+}
+
+.valor_category {
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-4);
+    color: var(--color-grey-1);
+    background-color: var(--color-brand-3);
+    padding: 7px 14px;
+    border-radius: 4px;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.valor_button {
+    background-image: url(/src/assets/trash-64.png);
+    padding: 14px;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid var(--color-brand-3);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 4px;
+
+}
+
+
+@media(min-width: 900px) {}

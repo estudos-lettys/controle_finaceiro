@@ -16,9 +16,11 @@ function renderValor(data) {
         valores.insertAdjacentHTML("afterbegin",
             `
        <div class="valorEncontrado">
-        <h3 class="valor_value">R$ ${valor.value}</h3>
-        <h3 class="valor_category">${valor.categoryID}</h3>
-        <button class="valor_button">L</button>
+            <h3 class="valor_value">R$ ${valor.value.toLocaleString('pt-br', {minimumFractionDigits: 2})}</h3>
+            <div class="category_button">
+                <h3 class="valor_category">${valor.categoryID}</h3>
+                <button class="valor_button"></button>
+            </div>
        </div>
       `)
     });
