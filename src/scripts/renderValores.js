@@ -1,9 +1,11 @@
+//importações 
+
 import { insertedValues, valuesCategory } from "./valuesDatabase.js";
 import { renderizaSemValoresTodos } from "./renderSemValores.js"
 const main = document.querySelector("main");
 const valores = document.querySelector("div.container_valores");
 
-
+//função para renderizar valores existentes 
 function renderValor(data) {
     valores.innerHTML = "";
     const render_valor = data.map((valor) => {
@@ -27,6 +29,8 @@ function renderValor(data) {
 
     return render_valor;
 }
+
+//função para renderizar todos (clamadas de função)
 
 function renderValoresTodos(data) {
     if (data.length == 0) {
