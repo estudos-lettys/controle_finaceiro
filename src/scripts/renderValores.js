@@ -16,10 +16,9 @@ function renderizaSemValoresTodos() {
      <h3>Nenhum valor cadastrado</h3>
     </div>
    `;
-
 }
+
 function renderizaSemValoresEntrada() {
-    valores.innerHTML = "";
     valores.innerHTML = `
     <div class="valorNaoEncontrado">
      <h3> Sem valores na categoria Entradas</h3>
@@ -37,37 +36,31 @@ function renderizaSemValoresSaida() {
 }
 
 //função para renderizar valores existentes 
-function renderValor(data) {
-    valores.innerHTML = "";
-    const render_valor = data.map((valor) => {
-        if (valor.categoryID == 0) {
-            valor.categoryID = "Entrada";
-        } else {
-            valor.categoryID = "Saída"
-        }
+function renderizaValoresExistentesTodos(data) {
+    data.forEach((valor) => {
+        const category = valor.categoryID == 0 ? "Entrada" : "Saída";
 
         valores.insertAdjacentHTML("afterbegin",
             `
-       <div class="valorEncontrado">
-            <h3 class="valor_value">R$ ${valor.value.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h3>
-            <div class="category_button">
-                <h3 class="valor_category">${valor.categoryID}</h3>
-                <button class="valor_button"></button>
-            </div>
-       </div>
-      `)
+                <div class="valorEncontrado">
+                        <h3 class="valor_value">R$ ${valor.value.toLocaleString('pt-br', { minimumFractionDigits: 2 })}</h3>
+                        <div class="category_button">
+                            <h3 class="valor_category">${category}</h3>
+                            <button class="valor_button"></button>
+                        </div>
+                </div>
+            `);
+
     });
-
-    return render_valor;
 }
-
 //função para renderizar todos E TELA INICIAL (clamadas de função)
 
 function renderValoresTodos(data) {
+    valores.innerHTML = "";
     if (data.length == 0) {
         renderizaSemValoresTodos();
     } else {
-        renderValor(data);
+        renderizaValoresExistentesTodos(data);
     }
 
 }
