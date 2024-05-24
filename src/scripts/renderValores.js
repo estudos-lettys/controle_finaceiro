@@ -11,7 +11,6 @@ const saida = document.querySelector("button.saida");
 
 //FUNÇÕES CASO ESTEJA SEM VALORES
 function renderizaSemValores(title) {
-
     valores.innerHTML = `
     <div class="valorNaoEncontrado">
      <h3>${title}</h3>
@@ -22,6 +21,10 @@ function renderizaSemValores(title) {
 //função para renderizar valores existentes 
 //TODOS
 function renderizaValoresExistentesTodos(data) {
+    entrada.classList.remove("ativo");
+    todos.classList.add("ativo");
+    saida.classList.remove("ativo");
+
     data.forEach((valor) => {
         const category = valor.categoryID == 0 ? "Entrada" : "Saída";
 
@@ -35,12 +38,15 @@ function renderizaValoresExistentesTodos(data) {
                         </div>
                 </div>
             `);
-
     });
     renderSoma(data);
 }
 //ENTRADA
 function renderizaValoresExistentesEntradas(data) {
+    entrada.classList.add("ativo");
+    todos.classList.remove("ativo");
+    saida.classList.remove("ativo");
+
     const filter = data.filter((valor) => {
         return valor.categoryID == 0;
     });
@@ -58,18 +64,22 @@ function renderizaValoresExistentesEntradas(data) {
                 </div>
             `);
     })
-
     renderSoma(filter);
 }
 
 //SAIDA
 function renderizaValoresExistentesSaidas(data) {
+    entrada.classList.remove("ativo");
+    todos.classList.remove("ativo");
+    saida.classList.add("ativo");
+
     const filter = data.filter((valor) => {
         return valor.categoryID == 1;
     });
 
     filter.forEach((valor) => {
         const category = valor.categoryID == 0 ? "Entrada" : "Saída";
+
         valores.insertAdjacentHTML("afterbegin",
             `
                   <div class="valorEncontrado">
@@ -81,7 +91,6 @@ function renderizaValoresExistentesSaidas(data) {
                   </div>
               `);
     })
-
     renderSoma(filter);
 }
 
@@ -89,15 +98,15 @@ function renderizaValoresExistentesSaidas(data) {
 
 function renderValoresTodos(data) {
     valores.innerHTML = "";
+    todos.classList.add("ativo");
     if (data.length == 0) {
         renderizaSemValores("Sem valores cadastrados");
     } else {
         renderizaValoresExistentesTodos(data);
     }
-
 }
 renderValoresTodos(insertedValues);
-
+//////AÇÕES DE CLICK 
 //AÇÃO DE CLICK PARA TODOS
 todos.addEventListener("click", () => {
     return renderValoresTodos(insertedValues);
