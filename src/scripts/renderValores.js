@@ -12,12 +12,16 @@ const saida = document.querySelector("button.saida");
 
 
 //FUNÇÕES CASO ESTEJA SEM VALORES
-function renderizaSemValores(title) {
+function renderizaSemValores(title, button_ativo, button_desativo1, button_desativo2) {
     valores.innerHTML = `
     <div class="valorNaoEncontrado">
      <h3>${title}</h3>
     </div>
    `;
+    button_desativo1.classList.remove("ativo");
+    button_ativo.classList.add("ativo");
+    button_desativo2.classList.remove("ativo");
+    renderSoma(getArray());
 }
 
 //função para renderizar valores existentes 
@@ -106,7 +110,7 @@ function renderValoresTodos(data) {
     valores.innerHTML = "";
     todos.classList.add("ativo");
     if (data.length == 0) {
-        renderizaSemValores("Sem valores cadastrados");
+        renderizaSemValores("Sem valores cadastrados", todos, entrada, saida);
     } else {
         renderizaValoresExistentesTodos(data);
     }
@@ -122,7 +126,7 @@ todos.addEventListener("click", () => {
 entrada.addEventListener("click", () => {
     valores.innerHTML = "";
     if (getArray().length == 0) {
-        renderizaSemValores("Sem valores na categoria Entradas");
+        renderizaSemValores("Sem valores na categoria Entradas", entrada, todos, saida);
     } else {
         renderizaValoresExistentesEntradas(getArray());
     }
@@ -132,7 +136,7 @@ entrada.addEventListener("click", () => {
 saida.addEventListener("click", () => {
     valores.innerHTML = "";
     if (getArray().length == 0) {
-        renderizaSemValores("Sem valores na categoria Saídas");
+        renderizaSemValores("Sem valores na categoria Saídas", saida, todos, entrada);
     } else {
         renderizaValoresExistentesSaidas(getArray());
     }
@@ -147,23 +151,11 @@ function renderSoma(data) {
     soma_total.innerHTML += `R$ ${reduz_soma.toLocaleString('pt-br', { minimumFractionDigits: 2 })}`
 
 }
-/////// FUNÇÕES DE AÇÕES DA LICHEIRA
 
-//             console.log(remove);
-//             const insertedValue=getArray()
-//             insertedValue.push({
-//                 id: 4,
-//                 value: 15.5,
-//                 categoryID: 0,
-//               })
-//               setArray(insertedValue)
-//             renderValoresTodos(getArray())
-
-
-
+//FUNÇÕES DE AÇÕES DA LICHEIRA
 function adicionaClick() {
     const lixo = document.querySelectorAll(".valor_button");
-    const lixoFiltrado = lixo.forEach((valor) => {
+    lixo.forEach((valor) => {
         return valor.onclick = function () { functionRemove(valor.id) };
     });
 }
@@ -177,3 +169,14 @@ function functionRemove(id) {
     renderValoresTodos(getArray());
 }
 
+
+///modal
+/////             console.log(remove);
+//             const insertedValue=getArray()
+//             insertedValue.push({
+//                 id: 4,
+//                 value: 15.5,
+//                 categoryID: 0,
+//               })
+//               setArray(insertedValue)
+//             renderValoresTodos(getArray())
