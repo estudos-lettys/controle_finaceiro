@@ -8,8 +8,8 @@ const soma_total = document.querySelector("h3.soma_total");
 const todos = document.querySelector("button.todos");
 const entrada = document.querySelector("button.entrada");
 const saida = document.querySelector("button.saida");
-
-
+const button_registro = document.querySelector(".button_header");
+const registro_modal = document.querySelector(".registro");
 
 //FUNÇÕES CASO ESTEJA SEM VALORES
 function renderizaSemValores(title, button_ativo, button_desativo1, button_desativo2) {
@@ -169,6 +169,42 @@ function functionRemove(id) {
     renderValoresTodos(getArray());
 }
 
+///FUNÇÃO PARA RENDERIZAR MODAL DE REGISTRO DE VALORES 
+function registroModal() {
+    registro_modal.innerHTML = `
+        <div class="container_modal">
+            <div class="header_modal">
+                <h2 class="titulo_modal">Registro de valor</h2>
+                <button class="fechar_modal"></button>
+            </div>
+            
+            <h3>Digite o valor e em seguida aperte no botão referente ao tipo do valor</h3>
+
+            <form class="form_modal">
+                 <label class"label_modal">Valor</label>
+                <br/>
+                <input type="number" placeholder="R$ 0,00" required />
+
+            <div class="tipo">
+                <label class="label_tipo">Tipo de valor</label>
+                <input type="button" value="Entrada">
+                <input type="button" value="Saída">
+            </div>
+
+            <div class="buttons_submits">
+                <button class="cancelar">Cancelar</button>
+                <button class="inserir_valor">Inserir valor</button>
+            </div>
+            </form>
+        </div>
+    `
+}
+registroModal();
+
+
+// button_registro.addEventListener("click",()=>{
+
+// });
 
 ///modal
 /////             console.log(remove);

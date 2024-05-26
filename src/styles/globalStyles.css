@@ -4,6 +4,7 @@
 @import url(./main_soma.css);
 @import url(./renderSemValores.css);
 @import url(./renderValores.css);
+@import url(./modal.css);
 
 * {
   margin: 0;
