@@ -1,0 +1,182 @@
+.registro {
+    display: flex;
+    position: fixed;
+    top: 20%;
+    margin: 20px;
+    padding: 24px;
+    border: 1px solid var(--color-brand-3);
+    border-radius: 8px;
+}
+
+dialog::backdrop {
+    background-color: rgba(150, 100, 200, 0.5);
+}
+
+.fechar_modal {
+    background-image: url(/src/assets/x_fechar.png);
+    background-position: center;
+    border: transparent;
+    padding: 12px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-color: var(--color-brand-3);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.fechar_modal:hover {
+    background-color: transparent;
+}
+
+.header_modal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+
+.titulo_modal {
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-2);
+}
+
+.text_modal {
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-3);
+    margin-bottom: 20px;
+}
+
+.input_number {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+}
+
+.label_modal {
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-3);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.input_modal {
+    padding: 10px 10px;
+    border-radius: 8px;
+    border: 1.5px solid var(--color-brand-2);
+    outline: none;
+}
+
+.input_modal:focus {
+    background-color: var(--color-brand-3);
+}
+
+.input_modal::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.tipo {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.label_tipo {
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-3);
+    font-weight: 500;
+}
+
+.input_button {
+    padding: 5px;
+    border-radius: 8px;
+    font-size: var(--font-size-3);
+    background-color: transparent;
+    border: 0.5px solid var(--color-brand-2);
+    cursor: pointer;
+}
+
+.input_button:hover {
+    background-color: var(--color-brand-3);
+}
+
+.buttons_submits {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.cancelar {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: var(--font-size-3);
+    border: transparent;
+    background-color: var(--color-brand-3);
+    color: var(--color-grey-2);
+    cursor: pointer;
+    width: 100%;
+}
+
+.cancelar:hover {
+    border: 1px solid var(--color-brand-1);
+    color: var(--color-brand-1);
+}
+
+.inserir_valor {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: var(--font-size-3);
+    border: transparent;
+    background-color: var(--color-brand-1);
+    color: var(--fixed-white);
+    cursor: pointer;
+    width: 100%;
+}
+
+.inserir_valor:hover {
+    border: 1px solid var(--color-brand-3);
+    background-color: var(--color-brand-2);
+    color: var(--color-brand-1);
+}
+
+@media(min-width: 900px) {
+    .registro {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 435px;
+        height: 335px;
+        padding: 24px;
+    }
+
+    .tipo {
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+    }
+
+    .buttons_submits {
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .cancelar {
+        width: 20%;
+    }
+
+    .inserir_valor {
+        width: 25%;
+    }
+}

@@ -178,22 +178,23 @@ function registroModal() {
                 <button class="fechar_modal"></button>
             </div>
             
-            <h3>Digite o valor e em seguida aperte no botão referente ao tipo do valor</h3>
+            <h3 class="text_modal">Digite o valor e em seguida aperte no botão referente ao tipo do valor</h3>
 
             <form class="form_modal">
-                 <label class"label_modal">Valor</label>
-                <br/>
-                <input type="number" placeholder="R$ 0,00" required />
+                <div class="input_number">
+                    <label class="label_modal">Valor</label>
+                    <input class="input_modal" type="number" placeholder="R$ 0,00" required />
+                </div>
+                 
+                <div class="tipo">
+                    <label class="label_tipo">Tipo de valor</label>
+                    <input class="input_button" type="button" value="Entrada">
+                    <input class="input_button" type="button" value="Saída">
+                </div>
 
-            <div class="tipo">
-                <label class="label_tipo">Tipo de valor</label>
-                <input type="button" value="Entrada">
-                <input type="button" value="Saída">
-            </div>
-
-            <div class="buttons_submits">
-                <button class="cancelar">Cancelar</button>
-                <button class="inserir_valor">Inserir valor</button>
+                <div class="buttons_submits">
+                    <button class="cancelar">Cancelar</button>
+                    <button class="inserir_valor">Inserir valor</button>
             </div>
             </form>
         </div>
