@@ -10,6 +10,7 @@ const entrada = document.querySelector("button.entrada");
 const saida = document.querySelector("button.saida");
 const button_registro = document.querySelector(".button_header");
 const registro_modal = document.querySelector(".registro");
+const dialog = document.querySelector("dialog"); 
 
 //FUNÇÕES CASO ESTEJA SEM VALORES
 function renderizaSemValores(title, button_ativo, button_desativo1, button_desativo2) {
@@ -170,42 +171,60 @@ function functionRemove(id) {
 }
 
 ///FUNÇÃO PARA RENDERIZAR MODAL DE REGISTRO DE VALORES 
-function registroModal() {
-    registro_modal.innerHTML = `
-        <div class="container_modal">
-            <div class="header_modal">
-                <h2 class="titulo_modal">Registro de valor</h2>
-                <button class="fechar_modal"></button>
-            </div>
-            
-            <h3 class="text_modal">Digite o valor e em seguida aperte no botão referente ao tipo do valor</h3>
 
-            <form class="form_modal">
-                <div class="input_number">
-                    <label class="label_modal">Valor</label>
-                    <input class="input_modal" type="number" placeholder="R$ 0,00" required />
-                </div>
-                 
-                <div class="tipo">
-                    <label class="label_tipo">Tipo de valor</label>
-                    <input class="input_button" type="button" value="Entrada">
-                    <input class="input_button" type="button" value="Saída">
-                </div>
 
-                <div class="buttons_submits">
-                    <button class="cancelar">Cancelar</button>
-                    <button class="inserir_valor">Inserir valor</button>
-            </div>
-            </form>
+registro_modal.innerHTML = `
+    <div class="container_modal">
+        <div class="header_modal">
+            <h2 class="titulo_modal">Registro de valor</h2>
+            <button class="fechar_modal"></button>
         </div>
-    `
-}
-registroModal();
+
+        <h3 class="text_modal">Digite o valor e em seguida aperte no botão referente ao tipo do valor</h3>
+
+        <div class="form_modal">
+            <div class="input_number">
+                <label class="label_modal">Valor</label>
+                <input class="input_modal" type="number" placeholder="R$ 0,00" />
+            </div>
+
+            <div class="tipo">
+                <label class="label_tipo">Tipo de valor</label>
+                <input class="input_button" type="button" value="Entrada">
+                <input class="input_button" type="button" value="Saída">
+            </div>
+
+            <div class="buttons_submits">
+                <button class="cancelar">Cancelar</button>
+                <button class="inserir_valor">Inserir valor</button>
+        </div>
+        </div>
+    </div>
+`
+const fechar = document.querySelector(".fechar_modal");
+const cancelar = document.querySelector(".cancelar");
+
+button_registro.addEventListener("click", () => {
+    dialog.classList.remove("close");
+    dialog.classList.add("open");
+
+    dialog.showModal();
+});
+
+fechar.addEventListener("click",() => {
+    dialog.classList.remove("open");
+    dialog.classList.add("close");
+    dialog.close();
+});
+
+cancelar.addEventListener("click",() => {
+    dialog.classList.remove("open");
+    dialog.classList.add("close");
+    dialog.close();
+});
 
 
-// button_registro.addEventListener("click",()=>{
 
-// });
 
 ///modal
 /////             console.log(remove);

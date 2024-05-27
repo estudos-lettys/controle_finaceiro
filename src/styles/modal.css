@@ -1,5 +1,13 @@
-.registro {
+.close {
+    display: none !important;
+}
+
+.open {
     display: flex;
+}
+
+.registro {
+
     position: fixed;
     top: 20%;
     margin: 20px;
@@ -8,8 +16,8 @@
     border-radius: 8px;
 }
 
-dialog::backdrop {
-    background-color: rgba(150, 100, 200, 0.5);
+::backdrop {
+    background-color: var(--color-grey-1-opacity-5);
 }
 
 .fechar_modal {
@@ -100,7 +108,8 @@ dialog::backdrop {
     cursor: pointer;
 }
 
-.input_button:hover {
+.input_button:hover,
+.input_button:focus {
     background-color: var(--color-brand-3);
 }
 
