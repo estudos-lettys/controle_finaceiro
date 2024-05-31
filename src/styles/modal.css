@@ -99,13 +99,30 @@
     font-weight: 500;
 }
 
-.input_button {
-    padding: 5px;
-    border-radius: 8px;
-    font-size: var(--font-size-3);
+input[type="radio"] {
+    -webkit-appearance: none;
+}
+
+.label {
+    width: 24%;
+    height: 34px;
+    border: 2px solid var(--color-brand-3);
     background-color: transparent;
-    border: 0.5px solid var(--color-brand-2);
+    border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    font-size: var(--font-size-3);
+    color: var(--color-brand-2);
+}
+
+input[type="radio"]:checked {
+    background-color: var(--color-brand-2);
+    color: white;
 }
 
 .input_button:hover,

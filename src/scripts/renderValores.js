@@ -10,7 +10,7 @@ const entrada = document.querySelector("button.entrada");
 const saida = document.querySelector("button.saida");
 const button_registro = document.querySelector(".button_header");
 const registro_modal = document.querySelector(".registro");
-const dialog = document.querySelector("dialog"); 
+const dialog = document.querySelector("dialog");
 
 //FUNÇÕES CASO ESTEJA SEM VALORES
 function renderizaSemValores(title, button_ativo, button_desativo1, button_desativo2) {
@@ -170,7 +170,7 @@ function functionRemove(id) {
     renderValoresTodos(getArray());
 }
 
-///FUNÇÃO PARA RENDERIZAR MODAL DE REGISTRO DE VALORES 
+///RENDERIZAR MODAL DE REGISTRO DE VALORES 
 
 
 registro_modal.innerHTML = `
@@ -182,28 +182,34 @@ registro_modal.innerHTML = `
 
         <h3 class="text_modal">Digite o valor e em seguida aperte no botão referente ao tipo do valor</h3>
 
-        <div class="form_modal">
+        <div id="formulario" class="form_modal">
             <div class="input_number">
-                <label class="label_modal">Valor</label>
-                <input class="input_modal" type="number" placeholder="R$ 0,00" />
+                <label for="valor" class="label_modal">Valor</label>
+                <input id="valor" class="input_modal" type="number" placeholder="R$ 0,00" />
             </div>
 
             <div class="tipo">
-                <label class="label_tipo">Tipo de valor</label>
-                <input class="input_button" type="button" value="Entrada">
-                <input class="input_button" type="button" value="Saída">
+                <label for="tipo" class="label_tipo">Tipo de valor</label>
+                <input type="radio" value="Entrada" id="0" class="input_button"/>
+                <label class="entrada label" for="0"> <span>Entrada</span>  </label>
+                <input type="radio" value="Saída"  id="1" class="input_button" checked/>
+                <label class="saida label" for="1"> <span>Saída</span> </label>
             </div>
 
             <div class="buttons_submits">
                 <button class="cancelar">Cancelar</button>
-                <button class="inserir_valor">Inserir valor</button>
+                <button  class="inserir_valor">Inserir valor</button>
         </div>
         </div>
     </div>
 `
+
 const fechar = document.querySelector(".fechar_modal");
 const cancelar = document.querySelector(".cancelar");
 
+
+
+///EVENTOS DE CLICK PARA ABRIR E FECHAR O MODAL
 button_registro.addEventListener("click", () => {
     dialog.classList.remove("close");
     dialog.classList.add("open");
@@ -211,28 +217,60 @@ button_registro.addEventListener("click", () => {
     dialog.showModal();
 });
 
-fechar.addEventListener("click",() => {
+fechar.addEventListener("click", () => {
     dialog.classList.remove("open");
     dialog.classList.add("close");
     dialog.close();
 });
 
-cancelar.addEventListener("click",() => {
+cancelar.addEventListener("click", () => {
     dialog.classList.remove("open");
     dialog.classList.add("close");
     dialog.close();
 });
 
+///FUNÇÃO PARA ADICIONAR NOVOS VALORES NA LISTA(ainda em desenvolvimento )
+// const formulario = document.getElementById('formulario');
+// const valor = document.querySelector(".input_modal");
+// const submit = document.querySelector(".inserir_valor");
+// const newObject = new Object();
+
+// submit.addEventListener("click", () => {
+
+
+//     const valor_input = document.getElementById('valor').value;
+//     const tipo = document.querySelectorAll(".input_button");
+
+//     // tipo.forEach((valor) => { valor.onclick = function () { functionlog(valor.id) }; });
+//     tipo.forEach((valor) => { valor.onclick = function () { console.log(valor, valor.checked);}; });
+
+
+//     function functionlog(categoryid) {
+//         const insertedValue = getArray();
+//         const index = parseInt(insertedValue[insertedValue.length - 1].id + 1);
+
+//         newObject.id = parseInt(index);
+//         newObject.value = parseFloat(valor_input);
+//         newObject.categoryID = parseInt(categoryid);
+//         insertedValue.push(newObject);
+//         setArray(insertedValue);
+//         renderValoresTodos(getArray());
+//     }
+//     // dialog.classList.remove("open");
+//     // dialog.classList.add("close");
+//     // dialog.close();
+// });
 
 
 
-///modal
-/////             console.log(remove);
-//             const insertedValue=getArray()
-//             insertedValue.push({
-//                 id: 4,
-//                 value: 15.5,
-//                 categoryID: 0,
-//               })
-//               setArray(insertedValue)
-//             renderValoresTodos(getArray())
+// ///modal
+// /////             console.log(remove);
+// //             const insertedValue=getArray()
+// //             insertedValue.push({
+// //                 id: 4,
+// //                 value: 15.5,
+// //                 categoryID: 0,
+// //               })
+// //               setArray(insertedValue)
+// //             renderValoresTodos(getArray())
+
